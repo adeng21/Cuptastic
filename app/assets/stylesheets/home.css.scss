@@ -1,3 +1,48 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-size: 12px;
+  font-family: Helvetica, sans-serif;
+  background-color: #ddd;
+  margin: 0px;
+}
+
+header{
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 18px;
+  line-height: 50px;
+  font-weight: bold;
+  padding-left: 20px;
+  color: green;
+}
+
+#video-list-container{
+  background-color: #fff;
+  position: absolute;
+  width: 30%;
+  min-height: 700px;
+  overflow: auto;
+  left: 0;
+  bottom: 0;
+  top: 50px;
+  -webkit-overflow-scrolling: touch;
+  ul{
+    list-style: none;
+    margin: 5px;
+    padding: 4px;
+    li{
+      cursor: pointer;
+      border-bottom: 1px solid #ddd;
+      padding: 0 10px;
+    }
+  }
+  h1{
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
