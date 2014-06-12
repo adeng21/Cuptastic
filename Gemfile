@@ -32,6 +32,7 @@ group :doc do
 end
 
 gem 'feedjira'
+gem 'youtube_it'
 
 group :development, :test do
   gem 'rspec-rails'

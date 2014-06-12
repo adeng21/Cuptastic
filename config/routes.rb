@@ -1,5 +1,9 @@
 Cuptastic::Application.routes.draw do
-  resources :videos
+  root to: "home#index"
+  scope :api do
+    get "/videos" => "videos#index"
+    get "/videos/:id" => "videos#show"
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
