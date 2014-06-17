@@ -1,12 +1,15 @@
 <div ng-controller="VideoCtrl">
   <div id="video-list-container">
   <ul>
-    <li ng-repeat="video in videos">
+    <li ng-repeat="video in videos" ng-click="showVideo(video)">
       <h1>{{video.title}}</h1>
     </li>
   </ul>
   </div>
 
-  <div id="video-vide-container">
+  <div id="video-view-container" ng-show="selectedVideo">
+    <h2>{{selectedVideo.title}}</h2>
+    <iframe ng-src="{{selectedVideoURL}}"></iframe>
+    <p>{{selectedVideo.summary}}</p>
   </div>
 </div>

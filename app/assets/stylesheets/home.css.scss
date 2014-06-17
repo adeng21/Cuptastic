@@ -46,3 +46,30 @@ header{
     font-weight: bold;
   }
 }
+
+#video-view-container{
+  width: 70%;
+  left: 30%;
+  position: absolute;
+  border-left: 1px solid #d0d0d0;
+  top: 50px;
+  margin: auto;
+  h2{
+    margin: 10px;
+    padding: 10px;
+  }
+  p{
+    margin: 10px;
+    padding: 10px;
+  }
+  a{
+    margin: 10px;
+    padding: 10px;
+  }
+  iframe{
+    height: 500px;
+    width: 80%;
+    margin: auto;
+  }
+}
+

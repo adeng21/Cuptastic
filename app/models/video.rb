@@ -28,8 +28,8 @@ class Video < ActiveRecord::Base
         duration = ""
       end
 
-      if vid.player_url !=nil
-        link = vid.player_url
+      if vid.media_content[0].url !=nil
+        link = vid.media_content[0].url
       else
         link = ""
       end
