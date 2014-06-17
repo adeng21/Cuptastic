@@ -8,17 +8,18 @@ body {
   margin: 0px;
 }
 
-header{
-  height: 50px;
+#header{
+  height: 100px;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  font-size: 18px;
-  line-height: 50px;
+  font-size: 30px;
+  line-height: 100px;
   font-weight: bold;
   padding-left: 20px;
-  color: green;
+  color: #00AB05;
+  background-color: #FDED4B;
 }
 
 #video-list-container{
@@ -29,7 +30,7 @@ header{
   overflow: auto;
   left: 0;
   bottom: 0;
-  top: 50px;
+  top: 100px;
   -webkit-overflow-scrolling: touch;
   ul{
     list-style: none;
@@ -45,6 +46,9 @@ header{
     font-size: 15px;
     font-weight: bold;
   }
+  .active{
+    color: red;
+  }
 }
 
 #video-view-container{
@@ -52,11 +56,13 @@ header{
   left: 30%;
   position: absolute;
   border-left: 1px solid #d0d0d0;
-  top: 50px;
+  top: 100px;
   margin: auto;
   h2{
-    margin: 10px;
-    padding: 10px;
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    display: block;
   }
   p{
     margin: 10px;
@@ -70,6 +76,7 @@ header{
     height: 500px;
     width: 80%;
     margin: auto;
+    display: block;
   }
 }
 

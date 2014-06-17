@@ -1,8 +1,11 @@
 <div ng-controller="VideoCtrl">
+  <div id="header">
+    <p>Cuptastic<p>
+  </div>
   <div id="video-list-container">
   <ul>
-    <li ng-repeat="video in videos" ng-click="showVideo(video)">
-      <h1>{{video.title}}</h1>
+    <li ng-repeat="video in videos" ng-click="showVideo(video, $index)">
+      <h1 ng-class="{active: $index == selectedRow}">{{video.title}}</h1>
     </li>
   </ul>
   </div>

@@ -7,7 +7,7 @@ class Video < ActiveRecord::Base
     world_cup_videos = []
 
     client = YouTubeIt::Client.new(:dev_key=>YOUTUBE_CLIENT_ID)
-    video = client.videos_by(:query => "2014 world cup", :categories => [:sports], :tags => ['soccer', 'football'])
+    video = client.videos_by(:query => "2014 world cup", :duration =>  "long", :categories => [:sports], :tags => ['soccer', 'football'], :page => 1, :per_page => 50)
 
     video.videos.each do |vid|
       if vid.title != nil
