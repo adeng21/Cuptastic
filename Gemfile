@@ -30,7 +30,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'feedjira'
+gem 'simple_form'
 gem 'youtube_it'
 
 group :development, :test do

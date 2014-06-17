@@ -3,11 +3,11 @@ class Video < ActiveRecord::Base
   validates :link, presence: true
   validates :team, presence: true
 
-  def self.make_api_call
+  def self.make_api_call(team = " ")
     world_cup_videos = []
 
     client = YouTubeIt::Client.new(:dev_key=>YOUTUBE_CLIENT_ID)
-    video = client.videos_by(:query => "2014 world cup", :duration =>  "long", :categories => [:sports], :tags => ['soccer', 'football'], :page => 1, :per_page => 50)
+    video = client.videos_by(:query => "2014 world cup " + team.to_s, :duration =>  "long", :categories => [:sports], :tags => ['soccer', 'football'], :page => 1, :per_page => 50)
 
     video.videos.each do |vid|
       if vid.title != nil

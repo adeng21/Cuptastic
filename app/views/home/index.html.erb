@@ -1,7 +1,15 @@
-<div ng-controller="VideoCtrl">
+
   <div id="header">
     <p>Cuptastic<p>
+    <div>
+      <%=form_for :q, url: videos_path, method: :get do |f|%>
+      <%=f.select :team, collection: ['Brazil', 'Spain', 'Argentina']%>
+      <%=f.submit 'Search'%>
+      <%end%>
+    </div>
   </div>
+
+<div ng-controller="VideoCtrl">
   <div id="video-list-container">
   <ul>
     <li ng-repeat="video in videos" ng-click="showVideo(video, $index)">
