@@ -4,7 +4,7 @@
     <section>
       <%=form_for :q, url: videos_path, method: :get do |f|%>
       <%=f.select :team, collection: ['Brazil', 'Spain', 'Argentina']%>
-      <%=f.submit 'Search'%>
+      <%=f.submit 'Select Team'%>
       <!-- <button ng-click="updateVid" value="Update"> -->
       <%end%>
     </section>

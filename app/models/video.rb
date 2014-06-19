@@ -7,7 +7,7 @@ class Video < ActiveRecord::Base
     world_cup_videos = []
 
     client = YouTubeIt::Client.new(:dev_key=>YOUTUBE_CLIENT_ID)
-    video = client.videos_by(:query => "2014 world cup " + team.to_s, :duration =>  "long", :categories => [:sports], :tags => ['soccer', 'football'], :page => 1, :per_page => 50)
+    video = client.videos_by(:query => "2014 world cup " + team.to_s, :duration =>  "long", :categories => [:sports], :tags => ['soccer', 'football'], :page => 1, :per_page => 50, :orderby => 'duration')
 
     video.videos.each do |vid|
       if vid.title != nil
@@ -40,7 +40,7 @@ class Video < ActiveRecord::Base
         published_at = ""
       end
 
-      world_cup_videos << Video.new(title: title, summary: summary, duration: duration, link: link, published_at: published_at, team: "usa")
+      world_cup_videos << Video.new(title: title, summary: summary, duration: duration, link: link, published_at: published_at, team: " ")
     end
     return world_cup_videos
   end
