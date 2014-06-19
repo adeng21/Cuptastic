@@ -40,7 +40,7 @@ class Video < ActiveRecord::Base
         published_at = ""
       end
 
-      world_cup_videos << Video.new(title: title, summary: summary, duration: duration, link: link, published_at: published_at, team: team.values.pop)
+      world_cup_videos << Video.new(title: title, summary: summary, duration: duration, link: link, published_at: published_at, team: "usa")
     end
     return world_cup_videos
   end

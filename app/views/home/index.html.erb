@@ -1,18 +1,19 @@
-
+<div ng-controller="VideoCtrl">
   <div id="header">
-    <p>Cuptastic<p>
-    <div>
+    <p>Cuptastic</p>
+    <section>
       <%=form_for :q, url: videos_path, method: :get do |f|%>
       <%=f.select :team, collection: ['Brazil', 'Spain', 'Argentina']%>
       <%=f.submit 'Search'%>
+      <!-- <button ng-click="updateVid" value="Update"> -->
       <%end%>
-    </div>
+    </section>
   </div>
 
-<div ng-controller="VideoCtrl">
   <div id="video-list-container">
   <ul>
-    <li ng-repeat="video in videos" ng-click="showVideo(video, $index)">
+    <input ng-model="query" placeholder="Search videos">
+    <li ng-repeat="video in videos |filter:query" ng-click="showVideo(video, $index)">
       <h1 ng-class="{active: $index == selectedRow}">{{video.title}}</h1>
     </li>
   </ul>
