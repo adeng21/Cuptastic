@@ -2,12 +2,16 @@
   <div id="header">
     <p>Cuptastic</p>
     <section>
-      <%=form_for :q, url: videos_path, method: :get do |f|%>
-      <%=f.select :team, collection: ['Brazil', 'Spain', 'Argentina']%>
-      <%=f.submit 'Select Team'%>
-      <!-- <button ng-click="updateVid" value="Update"> -->
-      <%end%>
+   <!--    <%=form_for :q, url: videos_path, method: :get do |f|%>
+      <%=f.select :team, collection: ['Brazil', 'Argentina', 'Spain', 'Chile']%>
+      <ng-click="updateVid()" value="New Team"><%=f.submit 'Select Team'%>
+      <%end%> -->
+
+     <!--  <select ng-model="teams" ng-options="team.name group by team.group for team in teams" name="worldcup"></select> -->
     </section>
+
+
+
   </div>
 
   <div id="video-list-container">
