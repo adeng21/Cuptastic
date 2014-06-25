@@ -7,7 +7,8 @@
       <ng-click="updateVid()" value="New Team"><%=f.submit 'Select Team'%>
       <%end%> -->
 
-     <!--  <select ng-model="teams" ng-options="team.name group by team.group for team in teams" name="worldcup"></select> -->
+      <!-- <select ng-model="teams" ng-options="team.name group by team.group for team in teams" value="worldcup"></select> -->
+      <world-cup-teams update="newVideo(team)"></world-cup-teams>
     </section>
 
 
@@ -16,7 +17,7 @@
 
   <div id="video-list-container">
   <ul>
-    <input ng-model="query" placeholder="Search videos">
+    <input ng-model="query.title" placeholder="Search videos">
     <li ng-repeat="video in videos |filter:query" ng-click="showVideo(video, $index)">
       <h1 ng-class="{active: $index == selectedRow}">{{video.title}}</h1>
     </li>

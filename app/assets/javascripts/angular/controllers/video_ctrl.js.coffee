@@ -1,4 +1,4 @@
-App.controller('VideoCtrl', ['$scope', '$sce', 'Video', 'Search', ($scope, $sce, Video, Search) ->
+App.controller('VideoCtrl', ['$scope', '$sce','$resource', 'Video', ($scope, $sce, $resource, Video) ->
 
   $scope.teams = [
     {name: 'Brazil', group: 'A'},
@@ -20,11 +20,13 @@ App.controller('VideoCtrl', ['$scope', '$sce', 'Video', 'Search', ($scope, $sce,
     $scope.selectedRow = row
     $scope.selectedVideoURL = $sce.trustAsResourceUrl($scope.selectedVideo.link)
 
-  $scope.updateVid = ->
-    $scope.videos = Search.query ->
-    $scope.selectedVideo = $scope.videos[0]
-    $scope.selectedRow = 0
-    $scope.selectedVideoURL = $sce.trustAsResourceUrl($scope.selectedVideo.link)
-
+  $scope.newVideo = (team) ->
+    Path = $resource('api/videos?utf8=✓&q%5Bteam%5D:team&commit=Search',
+      team: team)
+    $scope.videos = Path.query ->
+      console.log team
+      $scope.selectedVideo = $scope.videos[0]
+      $scope.selectedRow = 0
+      $scope.selectedVideoURL = $sce.trustAsResourceUrl($scope.selectedVideo.link)
   ])
 

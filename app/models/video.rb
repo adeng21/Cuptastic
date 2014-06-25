@@ -3,7 +3,6 @@ class Video < ActiveRecord::Base
   validates :link, presence: true
   validates :team, presence: true
 
-  TEAM = ['Brazil', 'Spain', 'Argentina']
 
   def self.make_api_call(team = " ")
     world_cup_videos = []
